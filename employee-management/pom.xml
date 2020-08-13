@@ -10,9 +10,9 @@
 	</parent>
 	<groupId>com.emp</groupId>
 	<artifactId>employee-management</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1.DEV</version>
 	<name>employee-management-system</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Employee Management Services</description>
 
 	<properties>
 		<java.version>1.8</java.version>
