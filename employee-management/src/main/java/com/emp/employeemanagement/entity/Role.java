@@ -1,41 +1,32 @@
-package com.emp.employeemanagement.role.model;
-
-
-import java.util.HashSet;
-import java.util.Set;
+package com.emp.employeemanagement.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-import com.emp.employeemanagement.user.model.User;
-
-
 @Entity
-@Table(name="role")
+@Table(name = "role")
 public class Role {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
 	private Integer id;
-	
-	@Column(name="role_name")
+
+	@Column(name = "role_name")
 	private String roleName;
-	
-	@Column(name="description")
+
+	@Column(name = "description")
 	private String description;
-	
+
 //	@ManyToMany(fetch=FetchType.LAZY,mappedBy="roles")
 //	private Set<User> users = new HashSet<>();
-	
-	public Role() {}
+
+	public Role() {
+	}
 
 	public Integer getId() {
 		return id;
@@ -65,7 +56,7 @@ public class Role {
 	public String toString() {
 		return "Role [id=" + id + ", roleName=" + roleName + "]";
 	}
-	
+
 	public String getDescription() {
 		return description;
 	}
@@ -73,5 +64,5 @@ public class Role {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+
 }

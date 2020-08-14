@@ -1,4 +1,4 @@
-package com.emp.employeemanagement.user.rest;
+package com.emp.employeemanagement.controller;
 
 import java.util.List;
 
@@ -7,15 +7,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.emp.employeemanagement.user.dao.IUserDao;
-import com.emp.employeemanagement.user.model.User;
+import com.emp.employeemanagement.dao.UserDao;
+import com.emp.employeemanagement.entity.User;
 
 @RestController
 @RequestMapping(path="/user")
 public class UserRestImpl {
 	
 	@Autowired
-	private IUserDao iUserDao;
+	private UserDao iUserDao;
 	
 	@GetMapping(path="/hello")
 	public String getHello() {
