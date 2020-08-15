@@ -9,9 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.Getter;
-import lombok.Setter;
-
 @Entity
 @Table(name = "employee")
 public class Employee implements Serializable {
@@ -20,30 +17,32 @@ public class Employee implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "empId")
-	private int empId;
+	@Column(name = "id")
+	private Integer id;
 
-	@Column(name = "empName")
+	@Column(name = "emp_name")
 	private String empName;
 
-	@Column(name = "empContact")
+	@Column(name = "emp_contact")
 	private String empContact;
 
-	@Column(name = "empDepartment")
+	@Column(name = "emp_department")
 	private String empDepartment;
 
-	@Column(name = "empEmail")
+	@Column(name = "emp_email")
 	private String empEmail;
 
-	@Column(name = "empAddress")
+	@Column(name = "emp_address")
 	private String empAddress;
 
-	public int getEmpId() {
-		return empId;
+	public Employee() {}
+
+	public Integer getId() {
+		return id;
 	}
 
-	public void setEmpId(int empId) {
-		this.empId = empId;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getEmpName() {
