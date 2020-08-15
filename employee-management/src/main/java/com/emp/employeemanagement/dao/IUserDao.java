@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.emp.employeemanagement.entity.User;
 
 @Repository
-public interface UserDao extends JpaRepository<User, Integer> {
+public interface IUserDao extends JpaRepository<User, Integer> {
 
 }

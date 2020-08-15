@@ -7,22 +7,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.emp.employeemanagement.dao.UserDao;
 import com.emp.employeemanagement.entity.User;
+import com.emp.employeemanagement.iservice.IUserService;
 
 @RestController
 @RequestMapping(path="/user")
 public class UserRestImpl {
 	
 	@Autowired
-	private UserDao iUserDao;
+	private IUserService iUserService;
 	
 	@GetMapping(path="/hello")
 	public String getHello() {
 		return "hello";
 	}
 	@GetMapping(path="/findAll")
-	public List<User> getUser() {
-		return iUserDao.findAll();
+	public List<User> findAll() {
+		return iUserService.findAll();
 	}
 }

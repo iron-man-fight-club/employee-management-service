@@ -9,17 +9,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.emp.employeemanagement.dao.IRoleDao;
 import com.emp.employeemanagement.entity.Role;
+import com.emp.employeemanagement.iservice.IRoleService;
 
 @RestController
 @RequestMapping(path = "/role")
 public class RoleRestImpl {
 	
 	@Autowired
-	private IRoleDao iRoleDao;
+	private IRoleService iRoleService;
 	
 	@GetMapping(path="/findAll")
 	public List<Role> findAll(){
-		return iRoleDao.findAll();
+		return iRoleService.findAll();
 	}
 	
 }

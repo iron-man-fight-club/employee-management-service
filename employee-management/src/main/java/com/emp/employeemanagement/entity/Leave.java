@@ -7,12 +7,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
-@Table(name = "leave")
+@Table(name = "leave_employee")
 public class Leave {
 	
 	@Id
@@ -20,28 +22,29 @@ public class Leave {
 	@Column(name = "id")
 	private Integer id;
 	
-	@Column(name = "empId")
-	private int empId;
+	@ManyToOne
+	@JoinColumn(name = "employee_id")
+	private Employee employee;
 	
-	@Column(name = "leaveTitle")
+	@Column(name = "leave_title")
 	private String leaveTitle;
 	
-	@Column(name = "leaveDesc")
+	@Column(name = "leave_desc")
 	private String leaveDesc;
 	
-	@Column(name = "leaveApplyDate")
+	@Column(name = "leave_apply_date")
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date leaveApplyDate;
 	
-	@Column(name = "leaveStartDate")
+	@Column(name = "leave_start_date")
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date leaveStartDate;
 	
-	@Column(name = "leaveEndDate")
+	@Column(name = "leave_end_date")
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date leaveEndDate;
 	
-	@Column(name = "leaveStatus")
+	@Column(name = "leave_status")
 	private boolean leaveStatus;
 
 	public Integer getId() {
@@ -52,12 +55,12 @@ public class Leave {
 		this.id = id;
 	}
 
-	public int getEmpId() {
-		return empId;
+	public Employee getEmployee() {
+		return employee;
 	}
 
-	public void setEmpId(int empId) {
-		this.empId = empId;
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
 	}
 
 	public String getLeaveTitle() {
@@ -107,5 +110,7 @@ public class Leave {
 	public void setLeaveStatus(boolean leaveStatus) {
 		this.leaveStatus = leaveStatus;
 	}
+	
+	public Leave() {}
 
 }
