@@ -32,5 +32,11 @@ public class LeaveService implements ILeaveService{
 	public Leave save(Leave leave) {
 		return leaveDao.save(leave);
 	}
+	
+	@Override
+	public Iterable<Leave> getLeaveByEmpId(Integer id) {
+		// TODO Auto-generated method stub
+		return leaveDao.findByEmpId(id);
+	}
 }
 	

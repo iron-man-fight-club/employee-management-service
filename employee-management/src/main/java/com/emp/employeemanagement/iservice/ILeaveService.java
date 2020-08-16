@@ -11,5 +11,7 @@ public interface ILeaveService {
 	public List<Leave> findAll();
 	
 	public Leave save(Leave leave);
+	
+	public Iterable<Leave> getLeaveByEmpId(Integer id);
  
 }
