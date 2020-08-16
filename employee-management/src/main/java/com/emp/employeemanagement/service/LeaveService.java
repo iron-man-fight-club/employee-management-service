@@ -27,5 +27,10 @@ public class LeaveService implements ILeaveService{
 	public List<Leave> findAll() {
 		return leaveDao.findAll();
 	}
+	
+	@Override
+	public Leave save(Leave leave) {
+		return leaveDao.save(leave);
 	}
+}
 	
