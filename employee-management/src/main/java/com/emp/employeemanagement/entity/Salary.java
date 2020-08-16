@@ -1,6 +1,6 @@
 package com.emp.employeemanagement.entity;
 
-import java.util.Date;
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,10 +15,10 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "Leave_Details")
+@Table(name = "Salary_Details")
 @Getter
 @Setter
-public class Leave {
+public class Salary {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -28,27 +28,16 @@ public class Leave {
 	@Column(name = "emp_id")
 	private Integer empId;
 	
-	@Column(name = "leave_title")
-	private String leaveTitle;
+	@Column(name = "salary_month")
+	private String salaryMonth;
 	
-	@Column(name = "leave_desc")
-	private String leaveDesc;
-	
-	@Column(name = "leave_apply_date")
+	@Column(name = "salary_date")
 	@JsonFormat(pattern = "yyyy-MM-dd")
-	private Date leaveApplyDate;
+	private Date salaryDate;
 	
-	@Column(name = "leave_start_date")
-	@JsonFormat(pattern = "yyyy-MM-dd")
-	private Date leaveStartDate;
+	@Column(name = "salary_amount")
+	private Integer salaryAmount;
 	
-	@Column(name = "leave_end_date")
-	@JsonFormat(pattern = "yyyy-MM-dd")
-	private Date leaveEndDate;
 	
-	@Column(name = "leaveStatus")
-	private Boolean leaveStatus;
-
-
 
 }
