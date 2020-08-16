@@ -36,7 +36,7 @@ public class User {
 	@Column(name = "is_enable")
 	private Boolean isEnable=false;
 	
-	@ManyToMany(fetch=FetchType.LAZY ,cascade = { CascadeType.ALL })
+	@ManyToMany(fetch=FetchType.LAZY)
     @JoinTable(
         name = "user_role", 
         joinColumns = { @JoinColumn(name = "user_fk") }, 

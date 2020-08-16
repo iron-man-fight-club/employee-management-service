@@ -9,5 +9,7 @@ public interface ILeaveService {
 	public Leave applyLeave(Leave leave);
 	
 	public List<Leave> findAll();
+	
+	public Leave save(Leave leave);
  
 }
