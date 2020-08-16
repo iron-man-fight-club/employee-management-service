@@ -3,11 +3,9 @@ package com.emp.employeemanagement.dao;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.emp.employeemanagement.entity.Leave;
+import com.emp.employeemanagement.entity.Salary;
 
 @Repository
-public interface ILeaveDao extends JpaRepository<Leave, Integer>{
-	
-	Iterable<Leave> findByEmpId(Integer id);
+public interface ISalaryDao extends JpaRepository<Salary, Integer> {
 
 }
